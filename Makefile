@@ -1,3 +1,14 @@
+# 
+# Added Japanese patch of japanese/mutt-devel (mutt-1.15.1-ja.1)
+# by Kenji Rikitake to the files/ directory
+# Note: 
+# * USE the "UTF-9" modified locale for UTF-8 display
+#   available in the Japanese distribution.
+# * DO NOT ENABLE SLANG; use ncurses. 
+# * The rest of the file is the same as the mail/mutt Port Makefile
+#
+
+#
 # ex:ts=8
 # Ports collection makefile for:  mutt development
 # Date created:			  6 Jun 2001
