@@ -8,13 +8,21 @@
 # * The rest of the file is the same as the mail/mutt Port Makefile
 #
 
+## local mod
+
+#CC=	clang
+CC=	gcc46
+CXX=	g++46
+
+## local mod ends
+
 #
 # ex:ts=8
 # Ports collection makefile for:  mutt development
 # Date created:			  6 Jun 2001
 # Whom:				  Udo Schweigert
 #
-# $FreeBSD: ports/mail/mutt/Makefile,v 1.198 2012/11/17 05:59:06 svnexp Exp $
+# $FreeBSD: ports/mail/mutt/Makefile,v 1.199 2012/12/10 15:19:15 svnexp Exp $
 #
 # There are several knobs which are used to define additions to the core
 # mutt functionality.
@@ -135,6 +143,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.5.21
+PORTREVISION=	1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -332,7 +341,7 @@ CFLAGS+=	-I${NCURSESINC}
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL2)
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 .if exists(${LOCALBASE}/lib/libidn.so) && !defined(WITHOUT_MUTT_IDN)
 WITH_MUTT_IDN=	yes
